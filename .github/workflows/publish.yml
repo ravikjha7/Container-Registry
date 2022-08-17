@@ -16,8 +16,8 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Build the hello-world Docker image
+    - name: Build updated dockerfiles
       run: |
         chmod +x "${GITHUB_WORKSPACE}/.github/scripts/publish.sh"
-        "${GITHUB_WORKSPACE}/.github/scripts/publish.sh {GITHUB_WORKSPACE}"
+        "${GITHUB_WORKSPACE}/.github/scripts/publish.sh ${GITHUB_WORKSPACE} ${KEY_API} ${API_KEY}"
 
