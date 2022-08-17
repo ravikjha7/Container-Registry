@@ -14,10 +14,18 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ secrets.PAT }}
 
     - name: Build updated dockerfiles
       run: |
-        chmod +x "${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0.sh"
-        ${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0.sh ${GITHUB_WORKSPACE}/linuxdiary-3.0 ${API_KEY}
+        rm -f ${GITHUB_WORKSPACE}/.github/updates/linuxdiary-3.0
+        python ${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0/linuxdiary-3.0.py
+        ${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0/buildAndUpdate.sh
+        rm -f ${GITHUB_WORKSPACE}/.github/updates/linuxdiary-3.0
 
+    - name: Push hash changes
+      run: |
+        git config --global user.name 'Walchand Linux Users' Group'
+        git config --global user.email 'your-username@users.noreply.github.com'
+        git commit -am "Hash Updated"
+        git push
