@@ -19,5 +19,5 @@ jobs:
     - name: Build updated dockerfiles
       run: |
         chmod +x "${GITHUB_WORKSPACE}/.github/scripts/publish.sh"
-        "${GITHUB_WORKSPACE}/.github/scripts/publish.sh ${GITHUB_WORKSPACE} ${KEY_API} ${API_KEY}"
+        "${GITHUB_WORKSPACE}/.github/scripts/publish.sh ${API_KEY}"
 
