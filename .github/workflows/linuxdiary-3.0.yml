@@ -13,7 +13,7 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: ghcr.io
-        username: ${{ github.actor }}
+        username: wcewlug
         password: ${{ secrets.PAT }}
 
     - name: Build updated dockerfiles
@@ -26,6 +26,6 @@ jobs:
     - name: Push hash changes
       run: |
         git config --global user.name 'Walchand Linux Users' Group'
-        git config --global user.email 'your-username@users.noreply.github.com'
+        git config --global user.email 'wce.wlugclub@gmail.com'
         git commit -am "Hash Updated"
         git push
