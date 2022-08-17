@@ -18,13 +18,7 @@ jobs:
 
     - name: Build updated dockerfiles
       run: |
-        ls -al
-        pwd
-        rm -f ${GITHUB_WORKSPACE}/.github/updates/linuxdiary-3.0
-        touch ${GITHUB_WORKSPACE}/.github/updates/linuxdiary-3.0
-        python ${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0/linuxdiary-3.0.py
-        ${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0/buildAndUpdate.sh
-        rm -f ${GITHUB_WORKSPACE}/.github/updates/linuxdiary-3.0
+        python ${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0/linuxdiary-3.0.py && ${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0/buildAndUpdate.sh
 
     - name: Push hash changes
       run: |
