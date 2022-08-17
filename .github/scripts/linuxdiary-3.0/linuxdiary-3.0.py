@@ -13,7 +13,7 @@ def check(parent_dir, hash,dockerfile):
             sha256_hash.update(byte_block)
     
     if(not os.path.exists(hash)):
-        open(hash, 'w')
+        open(hash, 'w+')
     
     with open(hash, 'r') as file:
         fileHash = file.read().replace('\n', '')
@@ -40,7 +40,7 @@ def process(parent_dir, file):
 
 def main():
     global updateFile
-    updateFile = open(os.environ['GITHUB_WORKSPACE']+"/.github/updates/linuxdiary-3.0", "w")
+    updateFile = open(os.environ['GITHUB_WORKSPACE']+"/.github/updates/linuxdiary-3.0", "w+")
     process(directory, directory)
     updateFile.close()
 
