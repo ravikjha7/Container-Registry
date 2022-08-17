@@ -29,7 +29,7 @@ def check(hash,dockerfile):
 
 def process(parent_dir, file):
     if os.path.isfile(file):
-        check(parent_dir, parent_dir+"/hash", file)
+        check(parent_dir+"/hash", file)
         return 
 
     for filename in os.listdir(file):
