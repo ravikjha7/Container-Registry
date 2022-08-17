@@ -8,7 +8,7 @@ while read p; do
     IFS='/'
     read -a strarr <<<"${line[0]}"
 
-    NAME_ARR=("${strarr[@]:5:2}")
+    NAME_ARR=("${strarr[@]:6:2}")
 
     NAME=$(IFS=_ ; echo "${NAME_ARR[*]}")
 
