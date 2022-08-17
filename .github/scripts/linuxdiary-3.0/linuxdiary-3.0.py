@@ -4,7 +4,7 @@ import hashlib
 directory = os.environ['GITHUB_WORKSPACE'] + "/linuxdiary-3.0"
 updateFile = None
 
-def check(parent_dir, hash,dockerfile):
+def check(hash,dockerfile):
     print("Checking " + dockerfile,end='')
     sha256_hash = hashlib.sha256()
 
@@ -40,6 +40,12 @@ def process(parent_dir, file):
 
 def main():
     global updateFile
+
+    updateDir = os.environ['GITHUB_WORKSPACE']+"/.github/updates/linuxdiary-3.0"
+
+    if not os.path.exists(updateDir):
+        os.mkdir(updateDir)
+
     updateFile = open(os.environ['GITHUB_WORKSPACE']+"/.github/updates/linuxdiary-3.0", "w+")
     process(directory, directory)
     updateFile.close()
