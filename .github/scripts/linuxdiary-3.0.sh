@@ -1,4 +1,4 @@
-for dir in /tmp/*/     # list directories in the form "/tmp/dirname/"
+for dir in $1
 do
     dir=${dir%*/}      # remove the trailing "/"
     echo "${dir##*/}"    # print everything after the final "/"
