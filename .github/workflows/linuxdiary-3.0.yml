@@ -19,5 +19,5 @@ jobs:
     - name: Build updated dockerfiles
       run: |
         chmod +x "${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0.sh"
-        ${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0 ${API_KEY}
+        ${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0.sh ${API_KEY}
 
