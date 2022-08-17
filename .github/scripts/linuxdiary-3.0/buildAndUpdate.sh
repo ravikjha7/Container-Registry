@@ -14,4 +14,4 @@ while read p; do
 
     eval "docker build . -t ghcr.io/walchand-linux-users-group/${NAME}:latest -f ${line[0]}"
     eval "docker push ghcr.io/walchand-linux-users-group/${NAME}:latest"
-done < ../../updates/linuxdiary-3.0
+done < /home/runner/work/Container-Registry/Container-Registry/.github/updates/linuxdiary-3.0
