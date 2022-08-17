@@ -1,4 +1,4 @@
-name: publish
+name: linuxdiary-3.0
 
 on: [push]
 
