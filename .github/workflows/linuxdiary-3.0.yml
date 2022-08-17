@@ -18,6 +18,6 @@ jobs:
 
     - name: Build updated dockerfiles
       run: |
-        chmod +x "${GITHUB_WORKSPACE}/.github/scripts/publish.sh"
-        ${GITHUB_WORKSPACE}/.github/scripts/publish.sh ${API_KEY}
+        chmod +x "${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0.sh"
+        ${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0 ${API_KEY}
 
