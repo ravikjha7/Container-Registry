@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+LABEL org.opencontainers.image.source https://github.com/Walchand-Linux-Users-Group/Container-Registry
+
 RUN apt update && apt install  openssh-server sudo -y 
 
 RUN adduser hacker 
