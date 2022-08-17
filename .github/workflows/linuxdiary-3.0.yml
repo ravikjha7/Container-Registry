@@ -18,6 +18,7 @@ jobs:
 
     - name: Build updated dockerfiles
       run: |
+        ls -al
         rm -f ${GITHUB_WORKSPACE}/.github/updates/linuxdiary-3.0
         touch ${GITHUB_WORKSPACE}/.github/updates/linuxdiary-3.0
         python ${GITHUB_WORKSPACE}/.github/scripts/linuxdiary-3.0/linuxdiary-3.0.py
