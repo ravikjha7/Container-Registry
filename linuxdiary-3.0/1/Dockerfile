@@ -1,47 +1,37 @@
 FROM ubuntu:latest
 
-LABEL org.opencontainers.image.source https://github.com/Walchand-Linux-Users-Group/Container-Registry
+RUN apt-get update
 
-RUN apt update && apt install  openssh-server sudo -y 
+RUN mkdir /home/wlug
 
-RUN adduser hacker 
+RUN mkdir /home/wlug/linuxDiary3.0
 
-RUN echo 'root:iKD2YZmKB4' | chpasswd
+WORKDIR /home/wlug/linuxDiary3.0
 
-RUN  echo 'hacker:abcde' | chpasswd
+RUN echo "iamsomejewerisfilewithsomejewerisdata maybeyoucantrysomeotherfile ormaybeicouldbetheanswerinsomeothercontainer">answer00
 
-RUN service ssh start
+RUN echo "maybeyoucantrysomeotherfile ormaybeicouldbetheanswerinsomeothercontainer iamsomejewerisfilewithsomejewerisdata">answer01
 
-EXPOSE 22
+RUN echo "maybeyoucantrysomeotherfile iamsomejewerisfilewithsomejewerisdata ormaybeicouldbetheanswerinsomeothercontainer">answer02
 
-RUN cd && mkdir /home/hacker/LinuxDiary2021
+RUN echo "Congratulations, You Found Me !!! Flag : {{{<KEY>}}}">answer03
 
-WORKDIR  /home/hacker/LinuxDiary2021
+RUN echo "againajewerisfile areyoueventrying makesuretocheckeverypossiblefile">answer04
 
-RUN echo "r89ehg8reghre8gh89rehg89rehg8rehgrehg9erhg9hre9ghre9hgr98hg8hihioihiohoihihihhoihi 9hr89hrue78gugewf3fwg\njegh894h894h89gh89ehrg8h gr89hge89rhg89erhg89ehg89gh9r8egherhg89hehnoihihihihjihoihii ehgrfgrregreg egegewgegergkpok pokokpok okpokrgregregre9e8ghr89ehgrheg9rehgh84f894h">.itmaybehere00
+RUN chmod 444 answer00
 
-RUN echo "r89ehg8reghre8gh89rehg89rehg8rehgrehg9erhg9hre9ghre9hgr98hg8hihioihiohoihihihhoihi 9hr89hrue78gugewf3fwg\njegh894h894h89gh89ehrg8h gr89hge89rhg89erhg89ehg89gh9etet43t34trfg grgeger4t3ojgjgoijegjeojgejgerjgijoijr8egherhg89hehnoihihihihjihoihii ehgrfgrregreg egegewgegergkpok pokokpok okpokrgregregre9e8ghr89ehgrheg9reweqwhgh84f894h">.itmaybehere01
+RUN chmod 444 answer01
 
-RUN echo "r89ehg8reghre8gh89rehg89rehg8rehgrehg9erhg9hre9ghre9hgr98hg8hihioihiohoihihihhoihi 9hr89hrue78gugewf3fwg\njegh894h894h89gh89ehrg8h gr89hge89rhg89erhg89ehg89gh9rgjroirieiorhegioregihriehhgh84f894h">.itmaybehere02
+RUN chmod 444 answer02
 
-RUN echo "hfoewheiwhfihw893hfiwefwhewhiwgheghyewgewguewgew\nrhq89rh78qrg7q3g3gr367g276rg3276gr3276rg2673gf rejgergjreooigjregjigjeoigjgrgrej89hg89ehrg8h gr89hge89rhg89erhg89ehg89gh9r8egherhg89hehnoihihihihjihoihii ehgr9e8ghr89ehgrheg9rehgr89ehg8reghre8gh89rehg89rehg8rehgrehg9erhg9hre9ghre9hgr98hg8hihioihiohoihihihhoihi 9hr89hrue78gugewf3fwg\njegh894h894h89gh8hf849th84f894h">.itmaybehere04
+RUN chmod 444 answer03
 
-RUN echo "\n\nCongratulations, You are on right track :) \n\nFollow given steps to complete the task -> \n\n1.Use following string as str1 -> ILoveLinux\n2.Now, print current woking directory.\n3.Use this output as str2\n4.Concatenate str1 and str2(i.e. str1 + str2) \n5.Submit the resultant string in provided google form \n\nIf required always do take help of our best friend => Google :)\n\n\n\n\nGoogle Form Link : https://forms.gle/JaDCy5GRwWdcagz27 \n\n"> .itmaybehere03
+RUN chmod 444 answer04
 
-RUN sudo chmod 444 .itmaybehere00
+WORKDIR /home/wlug
 
-RUN sudo chmod 444 .itmaybehere01
+RUN echo "\n\n\n1) You will start within the /home/wlug directory. \n2) Your Flag will be inside current directory only. \n3) Try To Look For a file with the Flag. \n4) Use the value of Flag to Unlock Next Level. \n\n\nPossible Commands for the task -> ls, cd, cat \n\n\nAll The Best !!!">README
 
-RUN sudo chmod 444 .itmaybehere02
+RUN chmod 444 README
 
-RUN sudo chmod 444 .itmaybehere03
-
-RUN sudo chmod 444 .itmaybehere04
-
-WORKDIR /home/hacker
-
-RUN echo "\n\n\n1) At Start You will be inside /home/hacker directory.\n2) Go inside Only directory present inside current directory.\n3) Now, there you have to find the file containing some meaningful content , There you will get further instructions.\n\n\nPossible Commands required to complete task -> ls ,cd ,cat\n\n\n\nGood Luck :)\n\n\nAuthor:Pavan Shinde" > README
-
-RUN sudo chmod 444 README
-
-CMD ["/usr/sbin/sshd","-D"]
+CMD ["/bin/bash"]
